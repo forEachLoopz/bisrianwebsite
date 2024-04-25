@@ -44,17 +44,17 @@ header h1{
 
 main{
     position: fixed;
-    display: flex;
-    flex-direction: row;
+    justify-content: center;
 
 }
 
 main article{
     margin-top: 20px;
-    margin-left: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
     border: solid;
     border-radius: 10px;
-    width: 45%;
+    width: auto;
     text-align: center;
 
 }

@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "pacifico";
+    src: url(/assets/fonts/Pacifico-Regular.ttf);
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -18,78 +23,118 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-
-header{
-    height: 100%;
+header {
+    height: 10vh;
     background-color: rgb(43, 109, 190);
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+    font-family: "pacifico";
 }
 
-header img{
-    height: 60px;
-    align-self: center;
-    margin-right: 60px;
+header img {
+    height: 40px;
+    margin-right: 20px;
 }
 
-header h1{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    font-size: 74px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+header h1 {
+    font-size: 40px;
     color: rgb(255, 255, 255);
 }
 
-main{
+main {
+    height: 100%;
     position: fixed;
-    justify-content: center;
-
+    top: 10vh; /* Hauteur de l'en-tête */
+    bottom: 10%; /* Hauteur du pied de page */
+    left: 0;
+    right: 0;
+    overflow-y: auto; /* Ajout de la barre de défilement si nécessaire */
+    background-color: rgb(139, 196, 245);
+    color: rgb(0, 0, 0);
+    padding: 20px; /* Espacement autour du contenu principal */
 }
 
-main article{
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+main article {
+    padding: 10px;
+    margin: 10px auto; /* Centre l'article horizontalement avec un espacement vertical */
     border: solid;
     border-radius: 10px;
-    width: auto;
+    width: 80%; /* Réduit la largeur de l'article */
+    max-width: 600px; /* Limite la largeur maximale de l'article */
     text-align: center;
 
 }
 
-main article .articleName{
-    font-size: 30px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    
+main article:first-child {
+    margin-top: 0;
 }
 
-main article .articleContent{
+main article .articleName {
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main article .articleContent {
     margin-top: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-main article ul{
+main article ul {
     margin-top: 10px;
 }
 
-main article ul li{
+main article ul li {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
     list-style: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-top: 5px;
 }
 
-main article button{
+main article button {
     margin-top: 20px;
     margin-bottom: 20px;
     width: 120px;
-    height: 30px;
+    height: fit-content;
     border: none;
     background-color: rgb(43, 109, 190);
     color: rgb(255, 255, 255);
-}
-
-main article button:hover{
     cursor: pointer;
+}
+/* Styles pour les appareils mobiles */
+@media only screen and (max-width: 600px) {
+    body{
+        background-color: rgb(139, 196, 245);
+    }
+    header img {
+        margin-right: 20px;
+    }
+    header h1 {
+        font-size: 40px;
+    }
+    main {
+        height: calc(100% - 10vh - 10%); /* Calcul de la hauteur du main en soustrayant la hauteur de l'en-tête et du pied de page */
+        position: fixed;
+        top: 10vh; /* Hauteur de l'en-tête */
+        bottom: 10%; /* Hauteur du pied de page */
+        left: 0;
+        right: 0;
+        overflow-y: auto; /* Défilement automatique si nécessaire */
+        background-color: rgb(139, 196, 245);
+        color: rgb(0, 0, 0);
+        padding: 20px; /* Espacement autour du contenu principal */
+    }
+    
+    main article {
+        width: 90%; /* Augmente légèrement la largeur de l'article sur les appareils mobiles */
+    }
+
+    main article .articleName {
+        font-size: 20px; /* Réduit la taille de la police du nom de l'article sur les appareils mobiles */
+    }
+    main article button {
+        width: 100px;
+        height: 40px;
+    }
 }

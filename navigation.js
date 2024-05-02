@@ -5,5 +5,4 @@ document.addEventListener("DOMContentLoaded", function(){
         window.open("https://bisrian.bandcamp.com/album/underground-dogs-3");
     })
 
-    
 })
